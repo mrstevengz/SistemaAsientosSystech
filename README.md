@@ -10,7 +10,7 @@
 ---
 
 ## 📌 Descripción
-El Sistema de Asientos SYSTECH es una solución para organizar la asignación de asientos y gestionar el orden de servicio de comida en el congreso SYSTECH (celebrado el 11 de septiembre de 2025). Busca reducir desorden, tiempos de espera y la pérdida de asientos mediante registro previo, generación de credenciales y un mecanismo que define el orden de atención en las filas de comida. :contentReference[oaicite:0]{index=0}
+El Sistema de Asientos SYSTECH es una solución para organizar la asignación de asientos y gestionar el orden de servicio de comida en el congreso SYSTECH (celebrado el 11 de septiembre de 2025). Busca reducir desorden, tiempos de espera y la pérdida de asientos mediante registro previo, generación de credenciales y un mecanismo que define el orden de atención en las filas de comida.
 
 ---
 
