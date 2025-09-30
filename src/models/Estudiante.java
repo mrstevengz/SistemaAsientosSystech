@@ -15,7 +15,11 @@ public class Estudiante {
         this.numRecibo = numRecibo;
     }
 
-    public void registrarse(){
+    public void registrarse(Evento evento){
+        evento.registrarParticipante(this);
+    }
 
+    public void seleccionarAsiento(Asiento asiento){
+        asiento.asignar(this);
     }
 }
