@@ -1,64 +1,40 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Evento {
-
-    // Atributos propios del UML
     private int idEvento;
     private String nombre;
     private Date fecha;
     private String lugar;
+    private List<Estudiante> participantes;
 
-    // Constructor
     public Evento(int idEvento, String nombre, Date fecha, String lugar) {
         this.idEvento = idEvento;
         this.nombre = nombre;
         this.fecha = fecha;
         this.lugar = lugar;
+        this.participantes = new ArrayList<>();
     }
 
-    // Getters y Setters
-    public int getIdEvento() {
-        return idEvento;
-    }
+    public int getIdEvento() { return idEvento; }
+    public String getNombre() { return nombre; }
+    public Date getFecha() { return fecha; }
+    public String getLugar() { return lugar; }
+    public List<Estudiante> getParticipantes() { return participantes; }
 
-    public void setIdEvento(int idEvento) {
-        this.idEvento = idEvento;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getLugar() {
-        return lugar;
-    }
-
-    public void setLugar(String lugar) {
-        this.lugar = lugar;
-    }
-
-    // Métodos del UML
+    //Metodo para registrar a un estudiante / participante al evento
     public void registrarParticipante(Estudiante estudiante) {
-        // Aquí debería ir la lógica de registro
-        System.out.println("Estudiante " + estudiante.getNombre() + " registrado en el evento " + nombre);
+        if (!participantes.contains(estudiante)) {
+            participantes.add(estudiante);
+        }
     }
 
-    public Credencial generarCredencial(Estudiante estudiante) {
-        // Aquí debería generar y devolver la credencial
-        return new Credencial(estudiante, this);
+    //Metodo para generar una credencial aleatoria al estudiante
+    public String generarCredencial(Estudiante estudiante) {
+        // Generar una credencial simple en forma de String
+        return "CRED-" + idEvento + "-" + estudiante.getCif();
     }
 }

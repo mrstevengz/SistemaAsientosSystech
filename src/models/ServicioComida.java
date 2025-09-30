@@ -1,7 +1,6 @@
 package models;
 
 public class ServicioComida {
-
     private int idServicio;
     private int turno;
     private String rangoCredencial;
@@ -12,12 +11,42 @@ public class ServicioComida {
         this.rangoCredencial = rangoCredencial;
     }
 
-
-    public void asignarTurno(Credencial credencial) {
-        System.out.println("Servicio de comida asignado al estudiante " + credencial.getNombre() + " en el turno " + turno);
+    public int getIdServicio() {
+        return idServicio;
     }
 
-    public void atender(Credencial credencial) {
-        System.out.println("Atendiendo al estudiante " + credencial.getNombre() + " en el turno " + turno);
+    public int getTurno() {
+        return turno;
+    }
+
+    public String getRangoCredencial() {
+        return rangoCredencial;
+    }
+
+    //Metodos para asignar un turno a una credencial y atenderla
+    public void asignarTurno(String credencial) {
+        String[] partes = rangoCredencial.split(":");
+        if (partes.length == 2) {
+            String inicio = partes[0];
+            String fin = partes[1];
+            if (credencial.compareTo(inicio) >= 0 && credencial.compareTo(fin) <= 0) {
+                System.out.println("Turno " + turno + " asignado a credencial " + credencial);
+            } else {
+                System.out.println("Credencial fuera de rango para este servicio.");
+            }
+        }
+    }
+
+    public void atender(String credencial) {
+        String[] partes = rangoCredencial.split(":");
+        if (partes.length == 2) {
+            String inicio = partes[0];
+            String fin = partes[1];
+            if (credencial.compareTo(inicio) >= 0 && credencial.compareTo(fin) <= 0) {
+                System.out.println("Atendiendo a credencial " + credencial + " en turno " + turno);
+            } else {
+                System.out.println("No se puede atender: credencial fuera de rango.");
+            }
+        }
     }
 }
