@@ -7,7 +7,13 @@ public class Estudiante {
     private int cif;
     private int numRecibo;
 
-    
+    public Estudiante(String nombre, String apellidos, String correo, int cif, int numRecibo) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.cif = cif;
+        this.numRecibo = numRecibo;
+    }
 
     public void registrarse(){
 
